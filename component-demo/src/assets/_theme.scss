@@ -1,0 +1,100 @@
+
+// 1.主题定义
+$theme-default: (
+  font-color: red,
+  font-size: 14px,
+  background: pink,
+  height:28px,
+  border-radius: 4px,
+  margin-top:10px,
+  line-height:30px,
+  margin-bottom:10px,
+  float:right
+);
+
+$theme-green: (
+  font-color: green,
+  font-size:14px,
+  background: yellow,
+  height:30px,
+  border-radius: 4px,
+  margin-top:10px,
+  line-height:30px,
+  plugin-float:right,
+  input-height:28px,
+);
+
+$theme-blue: (
+  font-color: blue,
+  font-size:24px,
+  background: #fff,
+);
+
+//  2.将定义好到主题添加到map中
+$themes:(
+  default:$theme-default,
+  green:$theme-green,
+  blue:$theme-blue,
+);
+
+// 4. 调用混合指令themify() ,定义规则,此处到规则会替换@content
+@mixin mytheme{
+  @include themify() {
+    color: themed("font-color");
+    font-size: themed("font-size");
+    .test-theme {
+      background: themed("background");
+    }
+    // .ReeButton{
+    //   font-size: themed("font-size");
+    //   height: themed("height");
+    //   line-height: themed("height");
+    // }
+    // .test{
+    //   height: themed("height");
+    //   background: themed("background");
+    //   font-size: themed("font-size");
+    //   margin-top: themed("margin-top");
+    // }
+    .btnclass{
+      height: themed("height");
+      // line-height: themed("height");
+      font-size: themed("font-size");
+      margin-top: themed("margin-top");
+      margin-bottom: themed("margin-top");
+      // line-height: themed("line-height");
+    }
+    .btn-contenter{
+      float: themed("float");
+    }
+    .pagination-container{
+      float: themed("plugin-float");
+    }
+    .el-input__inner{
+    height: themed("input-height");
+    }
+  }
+};
+
+// 3.定义混合指令, 切换主题,并将主题中到所有规则添加到theme-map中
+@mixin themify() {
+  @each $theme-name, $map in $themes {
+    // & 表示父级元素
+    // !global 表示覆盖原来的
+    .theme-#{$theme-name} & {
+      $theme-map: () !global;
+      // 循环合并键值对
+      @each $key, $value in $map {
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      // 表示包含 下面函数 themed()
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+// 通过key获取map中到值
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
