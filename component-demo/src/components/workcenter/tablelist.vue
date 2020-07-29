@@ -22,7 +22,7 @@
                 // this.$axios.post(ip + ':'+port +'/activiti/process/proinstlist', this.form).then((httpRes) => {
                 this.tableData = httpRes.data.data;
                 console.log("-------------");
-                console.log(this.tableData);
+                console.log(httpRes);
                 // this.total = httpRes.data.total;
         });
             }

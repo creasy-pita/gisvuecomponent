@@ -1,5 +1,9 @@
 # component-demo
 
+## axios-mock-adapter
+主要查看  handle_request.js handlerequest
+
+
 ## Project setup
 ```
 yarn install

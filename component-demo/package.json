@@ -5,10 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name gisqshoppingcart --dest lib src/mock/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "axios-mock-adapter": "^1.18.2",
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
     "mockjs": "^1.1.0",

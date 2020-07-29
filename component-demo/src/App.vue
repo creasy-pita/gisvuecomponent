@@ -6,11 +6,7 @@
 
 <script>
 import tablelist from '@/components/workcenter/tablelist.vue';
-// import SearchItem from './components/SearchItem.vue'
-// // import FormComponent from './components/FormComponent.vue'
-// import FreeTable from "@/components/FreeTable";
-// import TableData from "@/table";
-// import ButtonList from "@/components/ButtonList.vue"
+
 
 export default {
   name: "App",
