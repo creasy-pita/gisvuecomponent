@@ -7,7 +7,6 @@
 <script>
 import tablelist from '@/components/workcenter/tablelist.vue';
 
-
 export default {
   name: "App",
   components: {

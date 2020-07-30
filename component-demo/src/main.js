@@ -5,6 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 // import axios from './api/utils/axios'
 import axios from 'axios'
 import mock from './mock'
+console.log(mock);
 mock.bootstrap();
 Vue.use(ElementUI);
 Vue.config.productionTip = false
