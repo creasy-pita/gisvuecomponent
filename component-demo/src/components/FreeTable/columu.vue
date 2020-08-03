@@ -102,5 +102,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/_theme.scss"
+// @import "../../assets/_theme.scss"
 </style>

@@ -1,16 +1,16 @@
 <template>
   <div class="app-root">
-    <tablelist></tablelist>
+    <workcenter></workcenter>
   </div>
 </template>
 
 <script>
-import tablelist from '@/components/workcenter/tablelist.vue';
+import workcenter from '@/components/workCenter'
 
 export default {
   name: "App",
   components: {
-    tablelist
+    workcenter
   },
   data() {
     return {

@@ -1,19 +1,20 @@
 <template>
   <div class="free-table">
-    <el-table ref="elTable" :data="data" v-bind="$attrs" v-on="$listeners">
+    <el-table ref="elTable" :data="data" v-bind="$attrs" v-on="$listeners" :header-cell-style="{background:'rgba(245,247,250,1)',height:'40px'}">
       <template v-for="item in tbColumns">
         <el-table-column
           v-if="item.slotScope"
           v-bind="item"
           :key="item.prop"
           v-on="$listeners"
+          :fixed="item.fixed"
         >
           <template slot-scope="scope">
             <slot :name="item.prop" v-bind="scope"></slot>
           </template>
         </el-table-column>
 
-        <free-column v-else v-bind="$attrs" :key="item.prop" :column="item" />
+        <free-column v-else v-bind="$attrs" :key="item.prop" :column="item"/>
       </template>
     </el-table>
 

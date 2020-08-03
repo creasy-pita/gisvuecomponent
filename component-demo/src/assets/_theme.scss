@@ -9,7 +9,8 @@ $theme-default: (
   margin-top:10px,
   line-height:30px,
   margin-bottom:10px,
-  float:right
+  float:right,
+  table-padding:3px 0
 );
 
 $theme-green: (
@@ -22,6 +23,7 @@ $theme-green: (
   line-height:30px,
   plugin-float:right,
   input-height:28px,
+  table-padding:3px 0
 );
 
 $theme-blue: (
@@ -45,34 +47,29 @@ $themes:(
     .test-theme {
       background: themed("background");
     }
-    // .ReeButton{
-    //   font-size: themed("font-size");
-    //   height: themed("height");
-    //   line-height: themed("height");
-    // }
-    // .test{
-    //   height: themed("height");
-    //   background: themed("background");
-    //   font-size: themed("font-size");
-    //   margin-top: themed("margin-top");
-    // }
     .btnclass{
       height: themed("height");
       // line-height: themed("height");
       font-size: themed("font-size");
       margin-top: themed("margin-top");
-      margin-bottom: themed("margin-top");
+      // margin-bottom: themed("margin-top");
       // line-height: themed("line-height");
     }
-    .btn-contenter{
-      float: themed("float");
-    }
+    // .btn-contenter{
+    //   float: themed("float");
+    // }
     .pagination-container{
       float: themed("plugin-float");
     }
     .el-input__inner{
     height: themed("input-height");
     }
+    .el-table td{
+      padding: themed("table-padding");
+    }
+   .el-table th {
+     padding: themed("table-padding");
+   }
   }
 };
 

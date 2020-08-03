@@ -6,8 +6,12 @@
       :key="index"
       :icon="item.icon"
       :type="item.type"
-      @click="item.click()"
+      @click="item.handleClick()"
       v-bind="$attrs"
+      :circle="item.circle"
+      :disabled="item.disabled"
+      :loading="item.loading"
+      :plain="item.plain"
     >{{item.name}}</el-button>
     <slot></slot>
   </div>
@@ -16,55 +20,17 @@
 <script>
 
 export default {
+  props:['tableButtonList'],
   inheritAttrs: false , // 关闭特性继承
   data(){
     return{
-      tableButtonList:[
-        {
-          name:'点我点我',  //按钮名称
-          type:'success',  //按钮种类
-          size:'small',        //按钮的尺寸
-          click:this.aaa,
-          icon:'el-icon-search'
-        },
-           {
-          name:'点我点我',  //按钮名称
-          type:'success',  //按钮种类
-          size:'small',        //按钮的尺寸
-          click:this.aaa,
-          icon:'el-icon-search'
-        },
-           {
-          name:'点我点我',  //按钮名称
-          type:'success',  //按钮种类
-          size:'small',        //按钮的尺寸
-          click:this.aaa,
-          icon:'el-icon-search'
-        },
-          {
-          name:'点我点我',  //按钮名称
-          type:'success',  //按钮种类
-          size:'small',        //按钮的尺寸
-          click:this.aaa,
-          icon:'el-icon-search'
-        },
-          {
-          name:'点我点我',  //按钮名称
-          type:'success',  //按钮种类
-          size:'small',        //按钮的尺寸
-          click:this.aaa,
-          icon:'el-icon-search'
-        },
-      ]
+    
     }
   },
   methods:{
     aaa(){
       console.log('sdfsdfsf')
     },
-    // getSelection(item){
-    //  console.log(item)
-    // }
   }
 };
 </script>

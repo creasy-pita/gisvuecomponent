@@ -1,15 +1,34 @@
-import EditBtn from '@/components/EditBtn'
+// import EditBtn from '@/components/EditBtn'
 
 export default {
   data() {
     return {
       basicColumn: [
-        { label: '日期', prop: 'date', sortable: true },
-        { label: '姓名', prop: 'name' },
-        { label: '省份', prop: 'province' },
-        { label: '市区', prop: 'city' },
-        { label: '地址', prop: 'address', width: 300 },
-        { label: '邮编', prop: 'zip' },
+        { label: '选择',  prop: 'selection', type: 'selection' },
+        { label: '办件状态', prop: 'date',width:110, sortable: true },
+        { label: '环节状态', prop: 'name' ,width:105,sortable: true },
+        { label: '项目编号', prop: 'province',width:105,sortable: true },
+        { label: '办件名称', prop: 'city',width:105,sortable: true  },
+        { label: '登记类型', prop: 'address', width: 300 },
+        { label: '受理日期', prop: 'zip' },
+        { label: '开始日期', prop: 'zip' },
+        { label: '环节名称', prop: 'zip' },
+        { label: '在办人员', prop: 'zip' },
+        { label: '办理状态', prop: 'zip' },
+        {
+          label: '操作',
+          fixed:'right',
+          prop: 'cation',
+          align: 'center',
+          width: 100,
+          render: (h, scope) => {
+            return (
+              <div>
+                 <el-link type="primary" onClick={()=>{this.fileBag(scope)}}>打开办件</el-link>
+              </div>
+            )
+          }
+        },
         {
           label: 'v-model',
           render: (h, scope) => {
@@ -61,24 +80,24 @@ export default {
         { label: '邮编', prop: 'zip', slotScope: true }
       ],
 
-      componentColumn: [
-        { label: '日期', prop: 'date' },
-        { label: '姓名', prop: 'name' },
-        { label: '省份', prop: 'province' },
-        { label: '市区', prop: 'city' },
-        { label: '地址', prop: 'address' },
-        { label: '邮编', prop: 'zip' },
-        {
-          label: '组件',
-          prop: 'cmp',
-          component: EditBtn,
-          listeners: {
-            'row-edit'(row) {
-              console.log('row-edit', row)
-            }
-          }
-        }
-      ],
+      // componentColumn: [
+      //   { label: '日期', prop: 'date' },
+      //   { label: '姓名', prop: 'name' },
+      //   { label: '省份', prop: 'province' },
+      //   { label: '市区', prop: 'city' },
+      //   { label: '地址', prop: 'address' },
+      //   { label: '邮编', prop: 'zip' },
+      //   {
+      //     label: '组件',
+      //     prop: 'cmp',
+      //     component: EditBtn,
+      //     listeners: {
+      //       'row-edit'(row) {
+      //         console.log('row-edit', row)
+      //       }
+      //     }
+      //   }
+      // ],
 
       typesColumn: [
         {
@@ -211,6 +230,15 @@ export default {
           province: '武当山',
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        },
+        {
+          id: 4,
+          date: '2016-05-044',
+          name: '李连杰',
+          province: '新加坡',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1516 T',
           zip: 200333
         },
         {
