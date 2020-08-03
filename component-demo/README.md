@@ -3,7 +3,9 @@
 
 ## axios + MockAdapter+mockjs 实现多环境切换获取mockjs数据或真实接口数据
 
+see the local project: E:\work\myproject\vue2\TestMyThirdPackage
 组件打包后，主项目如何使用
+
 ```javascript
 import Vue from 'vue';
 import App from './App.vue';
