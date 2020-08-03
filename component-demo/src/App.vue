@@ -1,6 +1,7 @@
 <template>
   <div class="app-root">
-    <workcenter></workcenter>
+    <workcenter :IP="ip" :PORT="port"></workcenter>
+    <!-- <workcenter></workcenter> -->
   </div>
 </template>
 
@@ -14,7 +15,8 @@ export default {
   },
   data() {
     return {
-
+      ip:"192.168.11.78",
+      port:"19048"
     };
   },
 
@@ -25,7 +27,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-
-</style>

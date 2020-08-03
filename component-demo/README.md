@@ -1,4 +1,5 @@
-# vue-free-table
+[TOC]
+## vue-free-table
 
 > 基于 element ui table 二次封装，几乎支持原 table 所有的功能
 **特性**
@@ -238,7 +239,10 @@ export default {
   </script>
 
 ```
+## npm 
+npm publish --registry=http://192.168.11.146:8073/repository/npm-internal/
 
+npm install --registry=http://192.168.11.146:8073/repository/npm-all/ gisqworkcenter
 
 ## axios + MockAdapter+mockjs 实现多环境切换获取mockjs数据或真实接口数据
 

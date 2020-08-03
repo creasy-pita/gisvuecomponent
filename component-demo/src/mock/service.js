@@ -1,12 +1,14 @@
-import MockAdapter from 'axios-mock-adapter'
-import axios from 'axios'
 import {Users} from './data/user';
 export default {
-    bootstrap () {
+    bootstrap (mockAdapter) {
         console.log('process.env.NODE_ENV' + process.env.NODE_ENV);
-        var mock = new MockAdapter(axios)
-        mock.onPost("/activiti/process/proinstlist").reply(200, {
+        //带或不带 ip:port 
+        mockAdapter.onPost(/(http:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5}|)\/activiti\/process\/proinstlist/).reply(200, {
             Users
-            });        
+            });
+        //不带ip:port
+        // mock.onPost("/activiti/process/proinstlist").reply(200, {
+        //     Users
+        //     });                               
     },
 }

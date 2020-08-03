@@ -61,12 +61,23 @@ export default {
     ButtonList,
     SearchForm,
   },
-  props:{
-
+props: {
+  IP: {
+    type: String,
   },
+  PORT: {
+    type: String,
+  },
+  schema:{
+    type:String,
+    default:"http"
+  }  
+},
 //   mixins: [TableData],
   data() {
     return {
+    appUrlPre: (this.IP)?(this.schema + "://"+this.IP+":"+this.PORT):""
+    ,     
       columnsProps: {
         width: "auto",
       },
@@ -201,6 +212,7 @@ export default {
       //设置不同样式的变量
       return `theme-${this.theme}`;
     },
+
   },
   mounted() {
     this.loadtabledata();
@@ -208,8 +220,9 @@ export default {
   methods: {
     loadtabledata() {
       //通过mock获取数据
+      console.log(this.appUrlPre + "/activiti/process/proinstlist");
       this.$axios
-        .post("/activiti/process/proinstlist")
+        .post(this.appUrlPre + "/activiti/process/proinstlist")
         .then((httpRes) => {
           const dataArry = httpRes.data.Users;
           dataArry.forEach(v=>{
@@ -416,7 +429,6 @@ export default {
   },
 };
 </script>
-
 <style lang="scss">
 @import "../assets/_theme.scss";
 .app-containter {
