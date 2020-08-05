@@ -1,4 +1,13 @@
-[TOC]
+
+# content
+
+## 主题切换
+
+提前定义多套样式文件，如果时scss(使用webpack或者其它npm插件提前转化为css)
+css|scss 可以在element-ui.css|scss基础上修改
+使用body head中增加多个link，预加载对应的多套css
+切换控制启用那个css,禁用其他css
+
 ## vue-free-table
 
 > 基于 element ui table 二次封装，几乎支持原 table 所有的功能
