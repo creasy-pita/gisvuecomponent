@@ -1,0 +1,14 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+body + body {
+  margin-left: 10px;
+}
+
+div .el-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+}

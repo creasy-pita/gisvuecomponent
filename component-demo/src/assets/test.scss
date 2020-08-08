@@ -1,0 +1,26 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$namespace: el;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+@mixin b($block) {
+    $B: $namespace+'-'+$block !global;
+  
+    .#{$B} {
+      @content;
+    }
+  }
+div{
+    @include b(button){
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;        
+    }
+}

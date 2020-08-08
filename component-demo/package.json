@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:theme": "vue-cli-service build src/theme.js",
     "lib": "vue-cli-service build --target lib --name gisqworkcenter --dest lib src/components/index.js",
     "lint": "vue-cli-service lint",
     "debug": "node --inspect-brk=9229 ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve"

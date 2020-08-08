@@ -28,6 +28,7 @@ export default {
        //webpack打包默认会输出到根目录
         flatly: "./bluesea.css",
         peach: "./peachprincess.css",       
+        solar: "./solar.css",       
         // flatly: "../public/assests/bluesea.css",
         // peach: "../public/assests/peachprincess.css",
      },
